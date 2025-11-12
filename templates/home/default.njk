@@ -1,0 +1,17 @@
+{% extends "layouts/base.njk" %}
+
+{% block title %}{{ title }} - 首页{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="page-header">
+    <h1>首页模板</h1>
+    <p class="page-info">页面类型: {{ pageType }} | 模板名称: {{ templateName }}</p>
+  </div>
+  
+  <div class="content-section">
+    <h2>首页内容区域</h2>
+    <p>这是首页的默认模板，你可以在这里添加首页的内容。</p>
+  </div>
+</div>
+{% endblock %}

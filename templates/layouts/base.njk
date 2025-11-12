@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{{ title }}{% endblock %}</title>
+  {% block head %}
+  <link rel="stylesheet" href="/static/css/output.css">
+  {% endblock %}
+</head>
+<body>
+  {% block header %}
+  <header class="site-header">
+    <div class="container">
+      <h1>{{ title }}</h1>
+      <nav>
+        <a href="/">首页</a>
+        <a href="/detail">详情页</a>
+        <a href="/category">分类页</a>
+        <a href="/agreement">协议页</a>
+      </nav>
+    </div>
+  </header>
+  {% endblock %}
+
+  <main class="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% block footer %}
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2024 All rights reserved</p>
+    </div>
+  </footer>
+  {% endblock %}
+
+  {% block scripts %}
+  <script src="/static/js/common.js"></script>
+  {% endblock %}
+</body>
+</html>

@@ -1,0 +1,220 @@
+{% extends "layouts/base.njk" %}
+{% block content %}
+<div class="styles_hox-page-bg__9e3D7">
+    <main>
+        {% if ads %}
+        <div class="ads1 banner-ads"></div>
+        {% endif %}
+
+        <section class="styles_hox-section__suGCm">
+            <div class="styles_hox-flex__PiPii">
+                <div class="styles_hox-left__FX0ug">
+                    {% if featuredArticle %}
+                    <a class="Card_hox-main-item__tA3U7"
+                        href="{% if featuredArticle.url %}{{ featuredArticle.url }}{% else %}/detail/{{ featuredArticle.categoryId }}/{{ featuredArticle.id }}{% endif %}">
+                        <div class="Card_hox-img__DhWsq">
+                            <div style="position:relative;width:100%;height:100%">
+                                {% if featuredArticle.image %}
+                                <img alt="{{ featuredArticle.title }}" decoding="async" data-nimg="fill"
+                                    src="{{ featuredArticle.image }}"
+                                    style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+                                {% else %}
+                                <div class="bg-gray-100" style="position:relative;width:100%;height:100%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="Card_hox-card-body__BBmYv">
+                            <h3 class="Card_hox-title__sI4Ag">{{ featuredArticle.title }}</h3>
+                            <p class="Card_hox-time__gLUdz">
+                                {% if featuredArticle.author %}<span>{{ featuredArticle.author }}</span>&nbsp;{% endif
+                                %}
+                                <span>{{ featuredArticle.publishTime | default(featuredArticle.date) }}</span>
+                            </p>
+                            {% if featuredArticle.description %}
+                            <p class="Card_hox-desc__l30td">{{ featuredArticle.description }}</p>
+                            {% endif %}
+                        </div>
+                    </a>
+                    {% endif %}
+                </div>
+                <div class="styles_hox-right__q7KoJ">
+                    {% if sidebarNews %}
+                    <div class="styles_hox-mod-hidden__lg8jF">
+                        <section class="CardList_hox-card-list__EnBtW" style="--columns:2">
+                            {% for item in sidebarNews %}
+                            <a class="CardList_hox-item__oCoXp"
+                                href="{% if item.url %}{{ item.url }}{% else %}/detail/{{ item.categoryId }}/{{ item.id }}{% endif %}">
+                                <div style="">
+                                    {% if item.image %}
+                                    <img alt="{{ item.title }}" loading="lazy" width="50" height="50" decoding="async"
+                                        data-nimg="1" class="CardList_hox-news-img__9ihry" src="{{ item.image }}"
+                                        style="color: transparent;">
+                                    {% else %}
+                                    <div class="CardList_hox-news-img__9ihry bg-gray-100"
+                                        style="width:50px;height:50px"></div>
+                                    {% endif %}
+                                </div>
+                                <div class="CardList_hox-card-body___i6mM">
+                                    <h3 class="CardList_hox-title__puw4C">{{ item.title }}</h3>
+                                    <p class="CardList_hox-time__TbhNi">
+                                        {% if item.author %}<span>{{ item.author }}</span>&nbsp;{% endif %}
+                                        <span>{{ item.publishTime | default(item.date) }}</span>
+                                    </p>
+                                    {% if item.description %}
+                                    <p class="CardList_hox-desc__BTYJA">{{ item.description }}</p>
+                                    {% endif %}
+                                </div>
+                            </a>
+                            {% endfor %}
+                        </section>
+                    </div>
+                    {% endif %}
+
+                    {% if mobileNews %}
+                    <div class="styles_hox-pc-hidden__GofIb">
+                        {% for item in mobileNews %}
+                        <a class="Card_hox-main-item__tA3U7"
+                            href="{% if item.url %}{{ item.url }}{% else %}/detail/{{ item.categoryId }}/{{ item.id }}{% endif %}">
+                            <div class="Card_hox-img__DhWsq">
+                                <div class="bg-gray-100" style="position:relative;width:100%;height:100%"></div>
+                            </div>
+                            <div class="Card_hox-card-body__BBmYv">
+                                <h3 class="Card_hox-title__sI4Ag">{{ item.title }}</h3>
+                                <p class="Card_hox-time__gLUdz">
+                                    {% if item.author %}<span>{{ item.author }}</span>&nbsp;{% endif %}
+                                    <span>{{ item.publishTime | default(item.date) }}</span>
+                                </p>
+                            </div>
+                        </a>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+        {% if ads %}
+        <div class="ads2 banner-ads"></div>
+        {% endif %}
+
+        <section class="styles_hox-section__suGCm">
+            <div class="styles_hox-flex__PiPii">
+                <div class="styles_hox-left__FX0ug">
+                    {% if cardColumn %}
+                    <div>
+                        <section class="CardColum_hox-card-list__CAdwS">
+                            {% for item in cardColumn %}
+                            <a class="CardColum_hox-item__0uOeK"
+                                href="{% if item.url %}{{ item.url }}{% else %}/detail/{{ item.categoryId }}/{{ item.id }}{% endif %}">
+                                <div class="CardColum_hox-img__QbQsN">
+                                    <div style="position:relative;width:100%;height:100%">
+                                        {% if item.image %}
+                                        <img alt="{{ item.title }}" loading="lazy" decoding="async" data-nimg="fill"
+                                            class="CardColum_hox-news-img__idWIN" src="{{ item.image }}"
+                                            style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+                                        {% else %}
+                                        <div class="CardColum_hox-news-img__idWIN bg-gray-100"
+                                            style="position:relative;width:100%;height:100%"></div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="CardColum_hox-card-body__mLNwz">
+                                    <h3>{{ item.title }}</h3>
+                                    <p>
+                                        {% if item.author %}<span>{{ item.author }}</span>{% endif %}
+                                        <span>{{ item.publishTime | default(item.date) }}</span>
+                                    </p>
+                                </div>
+                            </a>
+                            {% endfor %}
+                        </section>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="styles_hox-right__q7KoJ">
+                    {% if rightSidebarNews %}
+                    <section class="CardList_hox-card-list__EnBtW" style="--columns:2">
+                        {% for item in rightSidebarNews %}
+                        <a class="CardList_hox-item__oCoXp"
+                            href="{% if item.url %}{{ item.url }}{% else %}/detail/{{ item.categoryId }}/{{ item.id }}{% endif %}">
+                            <div style="">
+                                {% if item.image %}
+                                <img alt="{{ item.title }}" loading="lazy" width="50" height="50" decoding="async"
+                                    data-nimg="1" class="CardList_hox-news-img__9ihry" src="{{ item.image }}"
+                                    style="color: transparent;">
+                                {% else %}
+                                <div class="CardList_hox-news-img__9ihry bg-gray-100" style="width:50px;height:50px">
+                                </div>
+                                {% endif %}
+                            </div>
+                            <div class="CardList_hox-card-body___i6mM">
+                                <h3 class="CardList_hox-title__puw4C">{{ item.title }}</h3>
+                                <p class="CardList_hox-time__TbhNi">
+                                    {% if item.author %}<span>{{ item.author }}</span>&nbsp;{% endif %}
+                                    <span>{{ item.publishTime | default(item.date) }}</span>
+                                </p>
+                                {% if item.description %}
+                                <p class="CardList_hox-desc__BTYJA">{{ item.description }}</p>
+                                {% endif %}
+                            </div>
+                        </a>
+                        {% endfor %}
+                    </section>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+        {% if ads %}
+        <div class="ads3 multiple-ads"></div>
+        {% endif %}
+
+        {% if bottomNewsList %}
+        <section class="styles_hox-section__suGCm">
+            <section class="CardList_hox-card-list__EnBtW" style="--columns:4">
+                {% for item in bottomNewsList %}
+                <a class="CardList_hox-item__oCoXp"
+                    href="{% if item.url %}{{ item.url }}{% else %}/detail/{{ item.categoryId }}/{{ item.id }}{% endif %}">
+                    {% if item.image %}
+                    <div class="CardList_hox-news-img__9ihry" style="width:50px;height:50px">
+                        <img src="{{ item.image }}" alt="{{ item.title }}" loading="lazy" width="50" height="50">
+                    </div>
+                    {% else %}
+                    <div class="CardList_hox-news-img__9ihry bg-gray-100" style="width:50px;height:50px"></div>
+                    {% endif %}
+                    <div class="CardList_hox-card-body___i6mM">
+                        <h3 class="CardList_hox-title__puw4C">{{ item.title }}</h3>
+                        <p class="CardList_hox-time__TbhNi">
+                            {% if item.author %}<span>{{ item.author }}</span>&nbsp;{% endif %}
+                            <span>{{ item.publishTime | default(item.date) }}</span>
+                        </p>
+                    </div>
+                </a>
+                {% endfor %}
+            </section>
+        </section>
+        {% endif %}
+
+        {% if latestArticles %}
+        <section class="styles_hox-section__suGCm styles_hox-pc-hidden__GofIb">
+            <h3 class="styles_hox-latest__tuBwr">Latest Articles</h3>
+            {% for item in latestArticles %}
+            <a class="Card_hox-main-item__tA3U7"
+                href="{% if item.url %}{{ item.url }}{% else %}/detail/{{ item.categoryId }}/{{ item.id }}{% endif %}">
+                <div class="Card_hox-img__DhWsq">
+                    <div class="bg-gray-100" style="position:relative;width:100%;height:100%"></div>
+                </div>
+                <div class="Card_hox-card-body__BBmYv">
+                    <h3 class="Card_hox-title__sI4Ag">{{ item.title }}</h3>
+                    <p class="Card_hox-time__gLUdz">
+                        {% if item.author %}<span>{{ item.author }}</span>&nbsp;{% endif %}
+                        <span>{{ item.publishTime | default(item.date) }}</span>
+                    </p>
+                </div>
+            </a>
+            {% endfor %}
+        </section>
+        {% endif %}
+    </main>
+</div>
+{% endblock %}

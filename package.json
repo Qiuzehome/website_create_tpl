@@ -1,0 +1,29 @@
+{
+  "name": "djs-website-tpl",
+  "version": "1.0.0",
+  "description": "Nunjucks模板项目",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node server.js && pnpm run tailwind:watch",
+    "build": "node build.js && pnpm run tailwind:build",
+    "tailwind:watch": "tailwindcss -i ./public/css/tailwind.css -o ./public/css/output.css --watch",
+    "tailwind:build": "tailwindcss -i ./public/css/tailwind.css -o ./dist/static/css/output.css --minify"
+  },
+  "keywords": [
+    "nunjucks",
+    "template",
+    "tpl"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nunjucks": "^3.2.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.22",
+    "chokidar": "^3.6.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.18"
+  }
+}

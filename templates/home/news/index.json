@@ -1,0 +1,261 @@
+{
+  "siteConfig": {
+    "homeUrl": "/",
+    "logo": "/logo/logo.png",
+    "siteName": "HOXILK",
+    "siteDomain": "hoxilk.net",
+    "menuIcon": "/icon/menu.png",
+    "footerDescription": "Insights, stories, and updates.",
+    "currentYear": "2026",
+    "poweredBy": "Powered by Website Factory"
+  },
+  "navigation": [
+    {
+      "url": "/1962",
+      "label": "Travel"
+    },
+    {
+      "url": "/1963",
+      "label": "Beauty"
+    },
+    {
+      "url": "/1964",
+      "label": "Retail & Consumer"
+    }
+  ],
+  "ads": [{}],
+  "featuredArticle": {
+    "id": 8608,
+    "categoryId": 1964,
+    "url": "/detail/1964/8608",
+    "title": "Camerons Brewery plans pub expansion into key cities",
+    "author": "",
+    "publishTime": "2025-08-23 05:56:40",
+    "date": "2025-08-23 05:56:40",
+    "image": "https://cdn.accountdigital.net/e7c34ea7-54a4-4505-aedb-cce2ee949ac0",
+    "description": "Camerons Brewery, the North East brewer and pub operator, is eyeing expansion for its Head of Steam pub chain, as it targets key cities in the North, South West, and potentially London after a buoyant trading year."
+  },
+  "sidebarNews": [
+    {
+      "id": 6841,
+      "categoryId": 1962,
+      "url": "/detail/1962/6841",
+      "title": "Embark on a Visual Journey Through Indonesia's Breathtaking Scenery with 20 Captivating Images",
+      "author": "Bella Santiago",
+      "publishTime": "2025-08-09 06:56:36",
+      "date": "2025-08-09 06:56:36",
+      "image": "https://cdn.accountdigital.net/9f8c7e47-3e78-473e-924e-72ce85483e2a"
+    },
+    {
+      "id": 8825,
+      "categoryId": 1964,
+      "url": "/detail/1964/8825",
+      "title": "Luxury stocks bounce back as high street brands Asos and Primark struggle",
+      "author": "",
+      "publishTime": "2025-08-03 22:36:03",
+      "date": "2025-08-03 22:36:03",
+      "image": "https://cdn.accountdigital.net/6a07c148-eab9-4fd2-b801-62fac28a9b0f"
+    },
+    {
+      "id": 8866,
+      "categoryId": 1964,
+      "url": "/detail/1964/8866",
+      "title": "McDonald's to create 120 jobs with new 24-hour drive-thru – despite council objections",
+      "author": "",
+      "publishTime": "2025-08-08 19:15:11",
+      "date": "2025-08-08 19:15:11",
+      "image": "https://cdn.accountdigital.net/8e247479-998f-4c0e-a30e-a27c881fd451"
+    },
+    {
+      "id": 8798,
+      "categoryId": 1964,
+      "url": "/detail/1964/8798",
+      "title": "Historic cider maker Thatchers posts record sales after Aldi legal battle win",
+      "author": "",
+      "publishTime": "2025-08-14 01:05:33",
+      "date": "2025-08-14 01:05:33",
+      "image": "https://cdn.accountdigital.net/0fb476fa-d942-48e3-8ec0-16bfce0a178a"
+    }
+  ],
+  "mobileNews": [
+    {
+      "id": 6841,
+      "categoryId": 1962,
+      "url": "/detail/1962/6841",
+      "title": "Embark on a Visual Journey Through Indonesia's Breathtaking Scenery with 20 Captivating Images",
+      "author": "Bella Santiago",
+      "publishTime": "2025-08-09 06:56:36",
+      "date": "2025-08-09 06:56:36"
+    },
+    {
+      "id": 8825,
+      "categoryId": 1964,
+      "url": "/detail/1964/8825",
+      "title": "Luxury stocks bounce back as high street brands Asos and Primark struggle",
+      "author": "",
+      "publishTime": "2025-08-03 22:36:03",
+      "date": "2025-08-03 22:36:03"
+    }
+  ],
+  "cardColumn": [
+    {
+      "id": 8618,
+      "categoryId": 1964,
+      "url": "/detail/1964/8618",
+      "title": "Virgin Atlantic Holidays soars as it reveals record profits - with sales up 10%",
+      "author": "",
+      "publishTime": "2025-08-15 13:50:45",
+      "date": "2025-08-15 13:50:45",
+      "image": "https://cdn.accountdigital.net/e06af4df-eaaa-4b47-b028-f228fbdad970"
+    },
+    {
+      "id": 6537,
+      "categoryId": 1962,
+      "url": "/detail/1962/6537",
+      "title": "Discover the Hidden Wonders of Egypt Beyond the Pyramids",
+      "author": "Nova Skye",
+      "publishTime": "2025-08-18 20:04:38",
+      "date": "2025-08-18 20:04:38"
+    },
+    {
+      "id": 8869,
+      "categoryId": 1964,
+      "url": "/detail/1964/8869",
+      "title": "The Stable pizza restaurant opens branch in Padstow",
+      "author": "",
+      "publishTime": "2025-08-26 02:37:24",
+      "date": "2025-08-26 02:37:24"
+    },
+    {
+      "id": 944,
+      "categoryId": 1963,
+      "url": "/detail/1963/944",
+      "title": "Enhance Your Beauty Regimen: Proven Strategies for a Radiant, Healthy Complexion",
+      "author": "Reagan Sullivan",
+      "publishTime": "2025-08-05 05:22:00",
+      "date": "2025-08-05 05:22:00"
+    },
+    {
+      "id": 6150,
+      "categoryId": 1962,
+      "url": "/detail/1962/6150",
+      "title": "Embark on a Journey Through Japan's Splendor by Rail: An Unforgettable Guide to Train Adventures 6150",
+      "author": "Lily Harris",
+      "publishTime": "2025-08-19 07:43:07",
+      "date": "2025-08-19 07:43:07"
+    },
+    {
+      "id": 8614,
+      "categoryId": 1964,
+      "url": "/detail/1964/8614",
+      "title": "Bristol Hoteliers Association appoints new chair",
+      "author": "",
+      "publishTime": "2025-08-09 15:37:04",
+      "date": "2025-08-09 15:37:04"
+    }
+  ],
+  "rightSidebarNews": [
+    {
+      "id": 8620,
+      "categoryId": 1964,
+      "url": "/detail/1964/8620",
+      "title": "BRC chair warns of price rises and jobs threat if Trump's China tariffs stay",
+      "author": "",
+      "publishTime": "2025-08-20 08:19:29",
+      "date": "2025-08-20 08:19:29",
+      "image": "https://cdn.accountdigital.net/e1b273a0-bb42-46aa-992a-53f2805a6c84",
+      "description": "The chairman of the British Retail Consortium (BRC), Andrew Higginson, has warned that prices will increase if President Donald Trump's tariffs remain at their current levels."
+    },
+    {
+      "id": 8610,
+      "categoryId": 1964,
+      "url": "/detail/1964/8610",
+      "title": "Shein gets green light from City watchdog to float on London Stock Exchange",
+      "author": "",
+      "publishTime": "2025-08-21 03:22:04",
+      "date": "2025-08-21 03:22:04",
+      "image": "https://cdn.accountdigital.net/fd3bbe8c-1c05-4acb-9ba0-55c7d584cfe2",
+      "description": "Fast fashion giant Shein has secured preliminary approval from the City's regulatory body to pursue a listing on the London Stock Exchange."
+    },
+    {
+      "id": 6845,
+      "categoryId": 1962,
+      "url": "/detail/1962/6845",
+      "title": "Embark on an Exciting 5-Day Adventure in Cairo and the Pyramids",
+      "author": "Leo Blaze",
+      "publishTime": "2025-08-28 23:10:25",
+      "date": "2025-08-28 23:10:25",
+      "description": "Cairo, the vibrant heart of Egypt, is a city where the past and present collide, offering a rich tapestry of experiences for every traveler."
+    },
+    {
+      "id": 8802,
+      "categoryId": 1964,
+      "url": "/detail/1964/8802",
+      "title": "Just Eat Takeaway.com sees shares rise as tech firm makes £3.3bn offer",
+      "author": "",
+      "publishTime": "2025-08-05 21:51:08",
+      "date": "2025-08-05 21:51:08",
+      "description": "Global technology company Prosus has tabled a £3.3bn bid to take over Just Eat Takeaway.com."
+    }
+  ],
+  "bottomNewsList": [
+    {
+      "id": 8837,
+      "categoryId": 1964,
+      "url": "/detail/1964/8837",
+      "title": "Subway expands menu in major revamp as it faces fierce competition from Greggs",
+      "author": "",
+      "publishTime": "2025-08-15 01:30:24",
+      "date": "2025-08-15 01:30:24"
+    }
+  ],
+  "latestArticles": [
+    {
+      "id": 8608,
+      "categoryId": 1964,
+      "url": "/detail/1964/8608",
+      "title": "Camerons Brewery plans pub expansion into key cities",
+      "author": "",
+      "publishTime": "2025-08-23 05:56:40",
+      "date": "2025-08-23 05:56:40"
+    }
+  ],
+  "footerNavigation": [
+    {
+      "title": "Navigation",
+      "url": "/",
+      "items": [
+        {
+          "url": "/1962",
+          "label": "Travel"
+        },
+        {
+          "url": "/1963",
+          "label": "Beauty"
+        },
+        {
+          "url": "/1964",
+          "label": "Retail & Consumer"
+        }
+      ]
+    },
+    {
+      "title": "Legal",
+      "url": "/",
+      "items": [
+        {
+          "url": "/about",
+          "label": "About us"
+        },
+        {
+          "url": "/privacyPolicy",
+          "label": "Privacy policy"
+        },
+        {
+          "url": "/terms",
+          "label": "Terms of use"
+        }
+      ]
+    }
+  ]
+}

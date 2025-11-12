@@ -1,0 +1,37 @@
+{% extends "layouts/base.njk" %}
+
+{% block title %}{{ title }} - 分类页{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="page-header">
+    <h1>分类页模板</h1>
+    <p class="page-info">页面类型: {{ pageType }} | 模板名称: {{ templateName }}</p>
+  </div>
+  
+  <div class="category-content">
+    <aside class="category-sidebar">
+      <h3>分类导航</h3>
+      <ul class="category-list">
+        <li><a href="#">分类一</a></li>
+        <li><a href="#">分类二</a></li>
+        <li><a href="#">分类三</a></li>
+      </ul>
+    </aside>
+    
+    <main class="category-main">
+      <h2>分类内容列表</h2>
+      <div class="item-list">
+        {% for item in items %}
+        <div class="item-card">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
+        {% else %}
+        <p>暂无内容</p>
+        {% endfor %}
+      </div>
+    </main>
+  </div>
+</div>
+{% endblock %}
