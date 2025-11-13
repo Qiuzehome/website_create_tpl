@@ -2,6 +2,7 @@ const express = require('express');
 const nunjucks = require('nunjucks');
 const path = require('path');
 const { fetchData } = require('./fetch');
+const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 3002;
@@ -67,12 +68,13 @@ app.get('/tpl/:path/:tpl', async (req, res) => {
   let configData = {};
   try {
     configData = await fetchData(type);
+    configData = configData.data || {}
+    fs.writeFileSync(path.join(templatesPath, `temporary_config.json`), JSON.stringify(configData, null, 2));
   } catch (e) {
     return res.status(500).send('数据获取失败');
   }
 
   const templateName = `${tplParam}/index`;
-  console.log(configData)
   try {
     res.render(`${pathParam}/${templateName}.njk`, Object.assign({
       title: '首页',
