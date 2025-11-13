@@ -12,50 +12,41 @@ npm install
 npm run dev
 ```
 
-服务器将在 `http://localhost:3000` 启动。
+服务器将在 `http://localhost:3002` 启动。
 
 ## 3. 访问模板
 
 ### 首页
-- 默认模板: `http://localhost:3000/`
-- 自定义模板: `http://localhost:3000/?template=模板名称`
+- 默认模板: `http://localhost:3002/`
+- 自定义模板: `http://localhost:3002/?template=模板名称`
 
-### 详情页
-- 默认模板: `http://localhost:3000/detail`
-- 自定义模板: `http://localhost:3000/detail/模板名称`
+### 模板页面
+- 自定义模板： http://localhost:3002/tpl/home/games
 
-### 分类页
-- 默认模板: `http://localhost:3000/category`
-- 自定义模板: `http://localhost:3000/category/模板名称`
-
-### 协议类页面
-- 默认模板: `http://localhost:3000/agreement`
-- 自定义模板: `http://localhost:3000/agreement/模板名称`
-
-### 页面列表
-访问 `http://localhost:3000/pages` 查看所有可用页面类型和模板。
+### 获取数据拼接
+- http://localhost:3002/tpl/home/games?type={games|news}
 
 ## 4. 添加新模板
 
 ### 添加首页模板
 
 1. 在 `templates/home/` 目录下创建新模板文件，如 `v2.njk`
-2. 访问 `http://localhost:3000/?template=v2`
+2. 访问 `http://localhost:3002/?template=v2`
 
 ### 添加详情页模板
 
 1. 在 `templates/detail/` 目录下创建新模板文件，如 `product.njk`
-2. 访问 `http://localhost:3000/detail/product`
+2. 访问 `http://localhost:3002/detail/product`
 
 ### 添加分类页模板
 
 1. 在 `templates/category/` 目录下创建新模板文件
-2. 访问 `http://localhost:3000/category/模板名称`
+2. 访问 `http://localhost:3002/category/模板名称`
 
 ### 添加协议类页面模板
 
 1. 在 `templates/agreement/` 目录下创建新模板文件
-2. 访问 `http://localhost:3000/agreement/模板名称`
+2. 访问 `http://localhost:3002/agreement/模板名称`
 
 ## 5. 模板结构
 
@@ -96,7 +87,7 @@ npm run dev
 
 ```njk
 {% block head %}
-<link rel="stylesheet" href="/static/css/your-style.css">
+<link rel="stylesheet" href="/tpl_staticcss/your-style.css">
 {% endblock %}
 ```
 
@@ -106,7 +97,7 @@ npm run dev
 
 ```njk
 {% block scripts %}
-<script src="/static/js/your-script.js"></script>
+<script src="/tpl_staticjs/your-script.js"></script>
 {% endblock %}
 ```
 
@@ -115,7 +106,7 @@ npm run dev
 在 `public/images/` 目录下添加图片文件，在模板中引用：
 
 ```njk
-<img src="/static/images/logo.png" alt="Logo">
+<img src="/tpl_staticimages/logo.png" alt="Logo">
 ```
 
 ## 7. 目录结构
@@ -187,7 +178,7 @@ public/
 
 确保：
 1. 静态资源文件在 `public/` 目录下
-2. 访问路径正确：`/static/css/...`、`/static/js/...`、`/static/images/...`
+2. 访问路径正确：`/tpl_staticcss/...`、`/tpl_staticjs/...`、`/tpl_staticimages/...`
 
 ### 页面路由错误
 
