@@ -4,10 +4,10 @@
   "description": "Nunjucks模板项目",
   "main": "index.js",
   "scripts": {
-    "dev": "node server.js && pnpm run tailwind:watch",
+    "dev": "node server/server.js && pnpm run tailwind:watch",
     "build": "node build.js && pnpm run tailwind:build",
     "tailwind:watch": "tailwindcss -i ./public/css/tailwind.css -o ./public/css/output.css --watch",
-    "tailwind:build": "tailwindcss -i ./public/css/tailwind.css -o ./dist/static/css/output.css --minify"
+    "tailwind:build": "tailwindcss -i ./public/css/tailwind.css -o ./dist/tpl_static/css/output.css --minify"
   },
   "keywords": [
     "nunjucks",

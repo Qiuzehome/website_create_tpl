@@ -1,14 +1,15 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
 const path = require('path');
-const fs = require('fs');
+const { fetchData } = require('./fetch');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3002;
 
 // 模板目录配置
-const templatesPath = path.join(__dirname, 'templates');
-const publicPath = path.join(__dirname, 'public');
+const rootDir = path.resolve(__dirname, '..');
+const templatesPath = path.join(rootDir, 'templates');
+const publicPath = path.join(rootDir, 'public');
 
 // 页面类型配置
 const pageTypes = {
@@ -30,7 +31,7 @@ const env = nunjucks.configure(templatesPath, {
 });
 
 // 静态文件服务
-app.use('/static', express.static(publicPath));
+app.use('/tpl_static', express.static(publicPath));
 
 // 首页路由
 app.get('/', (req, res) => {
@@ -59,18 +60,25 @@ app.get('/tpl/:path', (req, res) => {
   }
 });
 
-app.get('/tpl/:path/:tpl', (req, res) => {
+app.get('/tpl/:path/:tpl', async (req, res) => {
   const pathParam = req.params.path;
   const tplParam = req.params.tpl;
-  const configBuffer = fs.readFileSync(path.join(__dirname, `templates/${pathParam}/${tplParam}/index.json`))
-  const config = JSON.parse(configBuffer.toString())
-  const templateName = `${tplParam}/index`
+  const type = req.query.type;
+  let configData = {};
+  try {
+    configData = await fetchData(type);
+  } catch (e) {
+    return res.status(500).send('数据获取失败');
+  }
+
+  const templateName = `${tplParam}/index`;
+  console.log(configData)
   try {
     res.render(`${pathParam}/${templateName}.njk`, Object.assign({
       title: '首页',
       pageType: { pathParam },
       templateName: templateName
-    }, config));
+    }, configData));
   } catch (error) {
     res.status(404).send(`${pathParam}/${templateName}.njk`);
   }
