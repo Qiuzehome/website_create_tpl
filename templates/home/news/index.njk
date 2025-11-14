@@ -1,4 +1,13 @@
 {% extends "layouts/base.njk" %}
+{# 
+  注意：因为 Express server 实际预览时，资源应使用绝对路径或带/static等前缀的路径。
+  推荐如下写法通过 express 的静态目录引用 CSS：
+#}
+
+{% block head %}
+  <link rel="stylesheet" href="/static/css/home/news/index.css">
+{% endblock %}
+
 {% block content %}
 <div class="styles_hox-page-bg__9e3D7">
     <main>
