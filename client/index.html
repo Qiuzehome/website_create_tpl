@@ -421,16 +421,54 @@
     }
 
     resultDiv.innerHTML = "请求中...";
-    fetch("/your-target-url", { // 替换为你的url
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(dataToSend)
+
+    // GET方式：参数拼为url字符串
+    function encodeQuery(obj, prefix) {
+      let str = [];
+      for (let p in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, p)) {
+          let k = prefix ? prefix + "[" + p + "]" : p, v = obj[p];
+          if (typeof v === "object" && v !== null && !Array.isArray(v)) {
+            str.push(encodeQuery(v, k));
+          } else if (Array.isArray(v)) {
+            v.forEach(function (item, i) {
+              if (typeof item === "object" && item !== null) {
+                str.push(encodeQuery(item, k + "[" + i + "]"));
+              } else {
+                str.push(encodeURIComponent(k + "[" + i + "]") + "=" + encodeURIComponent(item));
+              }
+            });
+          } else if (v !== undefined) {
+            str.push(encodeURIComponent(k) + "=" + encodeURIComponent(v));
+          }
+        }
+      }
+      return str.join("&");
+    }
+
+    const queryString = encodeQuery(dataToSend, "data");
+
+    const url = "http://localhost:3000/render" + (queryString ? ("?" + queryString) : "");
+
+    fetch(url, {
+      method: "GET"
     })
-    .then(res => res.json())
-    .then(data => {
-      resultDiv.innerHTML = "<span class='success'>请求成功</span><br><pre>" + JSON.stringify(data, null, 2) + "</pre>";
+    .then(res => {
+      // 试图按JSON解析，否则按文本
+      return res.text().then(text => {
+        try {
+          return {json: JSON.parse(text), raw: text, ok: true};
+        } catch (e) {
+          return {json: null, raw: text, ok: false};
+        }
+      });
+    })
+    .then(result => {
+      if (result.ok && result.json !== null) {
+        document.getElementById("result").innerHTML = "<span class='success'>请求成功</span><br><pre>" + JSON.stringify(result.json, null, 2) + "</pre>";
+      } else {
+        document.getElementById("result").innerHTML = "<span class='success'>请求成功（非JSON返回）</span><br><pre>" + (result.raw) + "</pre>";
+      }
     })
     .catch(err => {
       resultDiv.innerHTML = '<span class="error">请求失败: ' + err + '</span>';
