@@ -48,41 +48,26 @@ app.get('/', (req, res) => {
   }
 });
 
-app.get('/tpl/:path', (req, res) => {
-  const pathParam = req.params.path;
-  try {
-    res.render(`${pathParam}/default.njk`, {
-      title: '首页',
-      pageType: { pathParam },
-      templateName: 'default'
-    });
-  } catch (error) {
-    res.status(404).send(`${pathParam}/default.njk`);
-  }
-});
-
-app.get('/tpl/:path/:tpl', async (req, res) => {
-  const pathParam = req.params.path;
-  const tplParam = req.params.tpl;
-  const type = req.query.type;
+app.get('/tpl', async (req, res) => {
+  const { page, name = "default", data } = req.query
   let configData = {};
   try {
-    configData = await fetchData(type);
+    configData = await fetchData(data);
     configData = configData.data || {}
     fs.writeFileSync(path.join(templatesPath, `temporary_config.json`), JSON.stringify(configData, null, 2));
   } catch (e) {
     return res.status(500).send('数据获取失败');
   }
 
-  const templateName = `${tplParam}/index`;
+  const templateName = `${name}/index`;
   try {
-    res.render(`${pathParam}/${templateName}.njk`, Object.assign({
+    res.render(`${page}/${templateName}.njk`, Object.assign({
       title: '首页',
-      pageType: { pathParam },
+      pageType: { page },
       templateName: templateName
     }, configData));
   } catch (error) {
-    res.status(404).send(`${pathParam}/${templateName}.njk`);
+    res.status(404).send(`${page}/${templateName}.njk`);
   }
 });
 

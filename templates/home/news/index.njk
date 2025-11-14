@@ -43,7 +43,7 @@
                         <section class="CardList_hox-card-list__EnBtW" style="--columns:2">
                             {% for item in list.slice(1, 5) %}
                             <a class="CardList_hox-item__oCoXp"
-                                href="{% if item.url %}{{ item.url }}{% else %}/detail/{{ item.categoryId }}/{{ item.id }}{% endif %}">
+                                href="{% if item.url %}{{ item.url }}{% else %}/detail/{{ item.id }}{% endif %}">
                                 <div style="">
                                     {% if item.img %}
                                     <img alt="{{ item.title }}" loading="lazy" width="50" height="50" decoding="async"
@@ -74,7 +74,7 @@
                     <div class="styles_hox-pc-hidden__GofIb">
                         {% for item in list.slice(1 , 5) %}
                         <a class="Card_hox-main-item__tA3U7"
-                            href="{% if item.url %}{{ item.url }}{% else %}/detail/{{ item.categoryId }}/{{ item.id }}{% endif %}">
+                            href="{% if item.url %}{{ item.url }}{% else %}/detail/{{ item.id }}{% endif %}">
                             <div class="Card_hox-img__DhWsq">
                                 <div class="bg-gray-100" style="position:relative;width:100%;height:100%"></div>
                             </div>
@@ -105,7 +105,7 @@
                         <section class="CardColum_hox-card-list__CAdwS">
                             {% for item in list.slice(7 , 13) %}
                             <a class="CardColum_hox-item__0uOeK"
-                                href="{% if item.url %}{{ item.url }}{% else %}/detail/{{ item.categoryId }}/{{ item.id }}{% endif %}">
+                                href="{% if item.url %}{{ item.url }}{% else %}/detail/{{ item.id }}{% endif %}">
                                 <div class="CardColum_hox-img__QbQsN">
                                     <div style="position:relative;width:100%;height:100%">
                                         {% if item.img %}
@@ -136,7 +136,7 @@
                     <section class="CardList_hox-card-list__EnBtW" style="--columns:2">
                         {% for item in list.slice(13 , 17) %}
                         <a class="CardList_hox-item__oCoXp"
-                            href="{% if item.url %}{{ item.url }}{% else %}/detail/{{ item.categoryId }}/{{ item.id }}{% endif %}">
+                            href="{% if item.url %}{{ item.url }}{% else %}/detail/{{ item.id }}{% endif %}">
                             <div style="">
                                 {% if item.img %}
                                 <img alt="{{ item.title }}" loading="lazy" width="50" height="50" decoding="async"
@@ -174,7 +174,7 @@
             <section class="CardList_hox-card-list__EnBtW" style="--columns:4">
                 {% for item in list.slice(17 , 29) %}
                 <a class="CardList_hox-item__oCoXp"
-                    href="{% if item.url %}{{ item.url }}{% else %}/detail/{{ item.categoryId }}/{{ item.id }}{% endif %}">
+                    href="{% if item.url %}{{ item.url }}{% else %}/detail/{{ item.id }}{% endif %}">
                     {% if item.img %}
                     <div class="CardList_hox-news-img__9ihry" style="width:50px;height:50px">
                         <img src="{{ item.img }}" alt="{{ item.title }}" loading="lazy" width="50" height="50">
@@ -200,7 +200,7 @@
             <h3 class="styles_hox-latest__tuBwr">Latest Articles</h3>
             {% for item in list.slice(30 , 40) %}
             <a class="Card_hox-main-item__tA3U7"
-                href="{% if item.url %}{{ item.url }}{% else %}/detail/{{ item.categoryId }}/{{ item.id }}{% endif %}">
+                href="{% if item.url %}{{ item.url }}{% else %}/detail/{{ item.id }}{% endif %}">
                 <div class="Card_hox-img__DhWsq">
                     <div class="bg-gray-100" style="position:relative;width:100%;height:100%"></div>
                 </div>
