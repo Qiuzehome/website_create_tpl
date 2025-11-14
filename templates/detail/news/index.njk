@@ -2,14 +2,14 @@
 {% block content %}
 <div class="main">
   <div class="main-page">
-    <h3>{{ detail.title }}</h3>
-    <p>{{ detail.author }}&nbsp;&nbsp;{{ detail.showTime }}</p>
+    <h3>{{ detail.news.title }}</h3>
+    <p>{{ detail.news.author }}&nbsp;&nbsp;{{ detail.news.showTime }}</p>
 
     <div class="ads1 info-ads"></div>
     <div class="content-box">
       <div class="left-column">
         <div class="articles-box">
-          {{ detail.news.content | safe }}
+          {{ detail.news.content }}
           <div class="ads3 multiple-ads"></div>
         </div>
       </div>
