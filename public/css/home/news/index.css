@@ -1,0 +1,360 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@15.2.1_react-dom@19.2.0_react@19.2.0__react@19.2.0_sass@1.93.2/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/.pnpm/next@15.2.1_react-dom@19.2.0_react@19.2.0__react@19.2.0_sass@1.93.2/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./node_modules/.pnpm/next@15.2.1_react-dom@19.2.0_react@19.2.0__react@19.2.0_sass@1.93.2/node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[7].use[4]!./node_modules/.pnpm/next@15.2.1_react-dom@19.2.0_react@19.2.0__react@19.2.0_sass@1.93.2/node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[7].use[5]!./common/Card/index.module.scss ***
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.Card_hox-main-item__tA3U7 {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  border-radius: 15px;
+}
+.Card_hox-main-item__tA3U7:hover {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px #000, 0 2px 4px -2px #000;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
+}
+.Card_hox-main-item__tA3U7 .Card_hox-img__DhWsq {
+  aspect-ratio: 16/9;
+}
+.Card_hox-main-item__tA3U7 .Card_hox-img__DhWsq img {
+  position: relative !important;
+}
+.Card_hox-main-item__tA3U7 .Card_hox-card-body__BBmYv {
+  padding: 1rem;
+}
+.Card_hox-main-item__tA3U7 .Card_hox-card-body__BBmYv .Card_hox-title__sI4Ag {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  width: 100%;
+  font-weight: 600;
+  color: #1E293B;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.Card_hox-main-item__tA3U7 .Card_hox-card-body__BBmYv .Card_hox-title__sI4Ag:hover {
+  color: #1D4ED8;
+}
+.Card_hox-main-item__tA3U7 .Card_hox-card-body__BBmYv .Card_hox-time__gLUdz {
+  margin-top: 0.5rem;
+}
+.Card_hox-main-item__tA3U7 .Card_hox-card-body__BBmYv .Card_hox-desc__l30td {
+  margin: 20px 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
+@media screen and (max-width: 750px) {
+  .Card_hox-main-item__tA3U7 {
+    height: auto;
+    margin-top: 1rem;
+  }
+  .Card_hox-main-item__tA3U7 .Card_hox-card-body__BBmYv {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding: 1rem;
+  }
+  .Card_hox-main-item__tA3U7 .Card_hox-card-body__BBmYv .Card_hox-title__sI4Ag {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@15.2.1_react-dom@19.2.0_react@19.2.0__react@19.2.0_sass@1.93.2/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/.pnpm/next@15.2.1_react-dom@19.2.0_react@19.2.0__react@19.2.0_sass@1.93.2/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./node_modules/.pnpm/next@15.2.1_react-dom@19.2.0_react@19.2.0__react@19.2.0_sass@1.93.2/node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[7].use[4]!./node_modules/.pnpm/next@15.2.1_react-dom@19.2.0_react@19.2.0__react@19.2.0_sass@1.93.2/node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[7].use[5]!./common/CardColum/index.module.scss ***
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.CardColum_hox-card-list__CAdwS .CardColum_hox-item__0uOeK {
+  display: flex;
+  gap: 1rem;
+  margin: 0 0 1rem;
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  border: 1px solid #e5e7eb;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.CardColum_hox-card-list__CAdwS .CardColum_hox-item__0uOeK:last-of-type {
+  margin: 0;
+}
+.CardColum_hox-card-list__CAdwS .CardColum_hox-item__0uOeK:hover {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px #000, 0 2px 4px -2px #000;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
+}
+.CardColum_hox-card-list__CAdwS .CardColum_hox-item__0uOeK .CardColum_hox-img__QbQsN {
+  width: 11rem;
+  aspect-ratio: 16/9;
+  position: relative;
+  overflow: hidden;
+}
+.CardColum_hox-card-list__CAdwS .CardColum_hox-item__0uOeK .CardColum_hox-news-img__idWIN {
+  object-fit: cover;
+}
+.CardColum_hox-card-list__CAdwS .CardColum_hox-item__0uOeK .CardColum_hox-card-body__mLNwz {
+  padding: 0.75rem 1rem 0.75rem 0.75rem;
+  flex: 4;
+}
+.CardColum_hox-card-list__CAdwS .CardColum_hox-item__0uOeK .CardColum_hox-card-body__mLNwz h {
+  width: 100%;
+  font-weight: 600;
+  color: #1E293B;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.CardColum_hox-card-list__CAdwS .CardColum_hox-item__0uOeK .CardColum_hox-card-body__mLNwz h3:hover {
+  color: #1D4ED8;
+}
+.CardColum_hox-card-list__CAdwS .CardColum_hox-item__0uOeK .CardColum_hox-card-body__mLNwz p {
+  color: #64748B;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+@media screen and (max-width: 750px) {
+  .CardColum_hox-img__QbQsN {
+    width: 9rem !important;
+  }
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@15.2.1_react-dom@19.2.0_react@19.2.0__react@19.2.0_sass@1.93.2/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/.pnpm/next@15.2.1_react-dom@19.2.0_react@19.2.0__react@19.2.0_sass@1.93.2/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./node_modules/.pnpm/next@15.2.1_react-dom@19.2.0_react@19.2.0__react@19.2.0_sass@1.93.2/node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[7].use[4]!./node_modules/.pnpm/next@15.2.1_react-dom@19.2.0_react@19.2.0__react@19.2.0_sass@1.93.2/node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[7].use[5]!./common/CardList/index.module.scss ***
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.CardList_hox-card-list__EnBtW {
+  margin: auto;
+  max-width: 1280px;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(var(--columns, 3), 1fr);
+  height: 100%;
+  grid-auto-rows: 1fr;
+}
+
+.CardList_hox-item__oCoXp {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  color: #29292c;
+  border-radius: 15px;
+  border: 1px solid #e5e7eb;
+}
+.CardList_hox-item__oCoXp:hover {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px #000, 0 2px 4px -2px #000;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
+}
+.CardList_hox-item__oCoXp .CardList_hox-news-img__9ihry {
+  border-radius: 0.5rem 0.5rem 0 0;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+.CardList_hox-item__oCoXp .CardList_hox-card-body___i6mM {
+  padding: 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: #64748B;
+}
+.CardList_hox-item__oCoXp .CardList_hox-title__puw4C {
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: left;
+  width: 100%;
+  color: #1E293B;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.CardList_hox-item__oCoXp .CardList_hox-title__puw4C:hover {
+  color: #1D4ED8;
+}
+.CardList_hox-item__oCoXp .CardList_hox-time__TbhNi {
+  margin-top: 0.25rem;
+}
+.CardList_hox-item__oCoXp .CardList_hox-desc__BTYJA {
+  margin: 20px 0;
+  max-width: 300px;
+  font-weight: 100;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+@media screen and (max-width: 750px) {
+  .CardList_hox-card-list__EnBtW {
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(min(var(--columns, 3), 2), 1fr);
+  }
+  .CardList_hox-item__oCoXp {
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+  }
+  .CardList_hox-item__oCoXp .CardList_hox-title__puw4C {
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+    height: auto;
+  }
+}
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@15.2.1_react-dom@19.2.0_react@19.2.0__react@19.2.0_sass@1.93.2/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/.pnpm/next@15.2.1_react-dom@19.2.0_react@19.2.0__react@19.2.0_sass@1.93.2/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./node_modules/.pnpm/next@15.2.1_react-dom@19.2.0_react@19.2.0__react@19.2.0_sass@1.93.2/node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[7].use[4]!./node_modules/.pnpm/next@15.2.1_react-dom@19.2.0_react@19.2.0__react@19.2.0_sass@1.93.2/node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[7].use[5]!./styles/index.module.scss ***
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.styles_hox-page-bg__9e3D7 {
+  box-sizing: content-box;
+  color: #41414c;
+  tab-size: 4;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  font-size: 16px;
+  margin: 0 auto;
+  position: relative;
+}
+.styles_hox-page-bg__9e3D7 .styles_hox-title__28cnE:hover {
+  color: #1D4ED8;
+}
+
+.styles_hox-section__suGCm {
+  padding: 2rem 1.5rem;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+.styles_hox-section__suGCm .styles_hox-latest__tuBwr {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  color: #1E293B;
+  margin-bottom: 1rem;
+}
+
+.styles_hox-flex__PiPii {
+  display: flex;
+  gap: 1rem;
+  align-items: stretch;
+}
+.styles_hox-flex__PiPii .styles_hox-left__FX0ug {
+  flex: 7;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  gap: 1.5rem;
+  color: #64748B;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.styles_hox-flex__PiPii .styles_hox-right__q7KoJ {
+  flex: 5;
+  display: flex;
+}
+.styles_hox-flex__PiPii .styles_hox-right__q7KoJ > * {
+  width: 100%;
+}
+
+.styles_hox-header-control__EQOTX {
+  text-align: center;
+  padding: 0.5rem 0 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 2rem;
+}
+
+.styles_hox-header-name__XSQ7s {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  color: #0f174A;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.styles_hox-header-desc__5U6NL {
+  color: #475569;
+  text-align: center;
+}
+
+.styles_hox-pc-hidden__GofIb {
+  display: none;
+}
+
+@media screen and (max-width: 750px) {
+  .styles_hox-mod-hidden__lg8jF {
+    display: none;
+  }
+  .styles_hox-pc-hidden__GofIb {
+    display: block;
+  }
+  .styles_hox-page-bg__9e3D7 {
+    font-size: 4.26vw;
+    max-width: 100vw;
+    overflow: hidden;
+  }
+  .styles_hox-page-bg__9e3D7 .styles_hox-section__suGCm {
+    padding: 1.5rem 1rem 0;
+  }
+  .styles_hox-page-bg__9e3D7 .styles_hox-section__suGCm:first-of-type {
+    padding-top: 0;
+  }
+  .styles_hox-page-bg__9e3D7 .styles_hox-flex__PiPii {
+    display: block;
+  }
+  .styles_hox-right__q7KoJ {
+    display: block;
+    margin-top: 1rem;
+  }
+  .styles_hox-right__q7KoJ .styles_hox-item__D1QBy {
+    height: auto;
+  }
+  .styles_hox-card-body__FsJgm {
+    padding: 24px !important;
+  }
+  .styles_hox-card-body__FsJgm h2 {
+    font-size: 2rem !important;
+    -webkit-line-clamp: 3 !important;
+    line-clamp: 3 !important;
+  }
+  .styles_hox-card-body__FsJgm p {
+    font-size: 0.875rem !important;
+    line-height: 22px !important;
+    -webkit-line-clamp: 3 !important;
+    line-clamp: 3 !important;
+  }
+  .styles_hox-latest__tuBwr {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  .styles_hox-card-footer__MzcB8 {
+    padding: 12px 24px !important;
+  }
+  .styles_hox-header-control__EQOTX {
+    padding: 1.5rem 0;
+    margin-bottom: 1rem;
+  }
+  .styles_hox-header-name__XSQ7s {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+  .styles_hox-header-desc__5U6NL {
+    color: #475569;
+    text-align: center;
+  }
+}

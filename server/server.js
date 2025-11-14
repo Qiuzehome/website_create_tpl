@@ -32,7 +32,7 @@ const env = nunjucks.configure(templatesPath, {
 });
 
 // 静态文件服务
-app.use('/tpl_static', express.static(publicPath));
+app.use('/static', express.static(publicPath));
 
 // 首页路由
 app.get('/', (req, res) => {

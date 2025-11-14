@@ -87,7 +87,7 @@ npm run dev
 
 ```njk
 {% block head %}
-<link rel="stylesheet" href="/tpl_staticcss/your-style.css">
+<link rel="stylesheet" href="/staticcss/your-style.css">
 {% endblock %}
 ```
 
@@ -97,7 +97,7 @@ npm run dev
 
 ```njk
 {% block scripts %}
-<script src="/tpl_staticjs/your-script.js"></script>
+<script src="/staticjs/your-script.js"></script>
 {% endblock %}
 ```
 
@@ -106,7 +106,7 @@ npm run dev
 在 `public/images/` 目录下添加图片文件，在模板中引用：
 
 ```njk
-<img src="/tpl_staticimages/logo.png" alt="Logo">
+<img src="/staticimages/logo.png" alt="Logo">
 ```
 
 ## 7. 目录结构
@@ -178,7 +178,7 @@ public/
 
 确保：
 1. 静态资源文件在 `public/` 目录下
-2. 访问路径正确：`/tpl_staticcss/...`、`/tpl_staticjs/...`、`/tpl_staticimages/...`
+2. 访问路径正确：`/staticcss/...`、`/staticjs/...`、`/staticimages/...`
 
 ### 页面路由错误
 
