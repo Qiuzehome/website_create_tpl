@@ -14,7 +14,7 @@ const publicPath = path.join(rootDir, 'public');
 
 // 页面类型配置
 const pageTypes = {
-  home: '首页',
+  index: '首页',
   detail: '详情页',
   category: '分类页',
   agreement: '协议类页面'
@@ -38,13 +38,13 @@ app.use('/static', express.static(publicPath));
 app.get('/', (req, res) => {
   const templateName = req.query.tpl || 'default';
   try {
-    res.render(`home/${templateName}.njk`, {
+    res.render(`index/${templateName}.njk`, {
       title: '首页',
-      pageType: 'home',
+      pageType: 'index',
       templateName: templateName
     });
   } catch (error) {
-    res.status(404).send(`模板未找到: home/${templateName}.njk`);
+    res.status(404).send(`模板未找到: index/${templateName}.njk`);
   }
 });
 

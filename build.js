@@ -6,14 +6,6 @@ const templatesPath = path.join(__dirname, 'templates');
 const publicPath = path.join(__dirname, 'public');
 const distPath = path.join(__dirname, 'dist');
 
-// 页面类型配置
-const pageTypes = {
-  home: '首页',
-  detail: '详情页',
-  category: '分类页',
-  agreement: '协议类页面'
-};
-
 // 统计信息
 const stats = {
   total: 0,
@@ -21,12 +13,6 @@ const stats = {
   failed: 0,
   errors: []
 };
-
-const outJson = {
-  path: [
-    { name: "home", tpl: ["defualt"] }
-  ]
-}
 
 // 工具函数：同步递归复制目录和文件
 function copyDirSync(src, dest) {
@@ -201,11 +187,7 @@ function buildTemplate(template) {
     content = content.replace(/\n{3,}/g, '\n\n').trim();
 
     let outputPath;
-    if (template.type === 'home') {
-      outputPath = path.join(distPath, 'home', `${template.name}.njk`);
-    } else {
-      outputPath = path.join(distPath, template.type, `${template.name}.njk`);
-    }
+    outputPath = path.join(distPath, template.type, `${template.name}.njk`);
     fs.mkdirSync(path.dirname(outputPath), { recursive: true });
     fs.writeFileSync(outputPath, content, 'utf8');
     stats.success++;

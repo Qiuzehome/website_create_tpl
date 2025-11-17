@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
-  <title>对象数组可视化与请求</title>
+  <title>对象可视化与请求</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Modern CSS: Using some CSS variables and flex layout, and a light card look -->
   <style>
@@ -15,16 +16,19 @@
       --border: #e6e9ef;
       --success: #388e3c;
       --error: #b71c1c;
-      --shadow: 0 4px 16px rgba(60,72,88,.07);
+      --shadow: 0 4px 16px rgba(60, 72, 88, .07);
       --radius: 10px;
-      --transition: 0.2s cubic-bezier(.47,.19,.29,.91);
+      --transition: 0.2s cubic-bezier(.47, .19, .29, .91);
     }
-    html, body {
+
+    html,
+    body {
       height: 100%;
       background: var(--bg);
       margin: 0;
       padding: 0;
     }
+
     body {
       min-height: 100vh;
       margin: 0;
@@ -36,6 +40,7 @@
       align-items: center;
       padding: 0;
     }
+
     .container {
       margin: 40px 0;
       min-width: 330px;
@@ -46,6 +51,7 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
+
     h2 {
       font-weight: 600;
       font-size: 2rem;
@@ -55,22 +61,19 @@
       letter-spacing: -.015em;
       text-align: center;
     }
-    .objects-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+
     .object-item {
       padding: 22px;
       border-radius: var(--radius);
       background: #f7f9fc;
-      box-shadow: 0 1px 4px rgba(60,72,88,0.06);
+      box-shadow: 0 1px 4px rgba(60, 72, 88, 0.06);
       border: 1px solid var(--border);
       margin-bottom: 0;
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
+
     .object-header {
       display: flex;
       align-items: center;
@@ -78,10 +81,12 @@
       gap: 14px;
       margin-bottom: 8px;
     }
+
     .object-actions {
       display: flex;
       gap: 8px;
     }
+
     label {
       margin-bottom: .5em;
       color: #667;
@@ -89,11 +94,13 @@
       font-size: .97rem;
       display: block;
     }
+
     .input-row {
       display: flex;
       gap: 18px;
     }
-    input[type="text"] {
+
+    input[type="text"], select {
       padding: 10px 13px;
       border: 1px solid var(--border);
       border-radius: 7px;
@@ -103,9 +110,11 @@
       transition: border var(--transition);
       width: 170px;
     }
-    input[type="text"]:focus {
+
+    input[type="text"]:focus, select:focus {
       border-color: var(--primary);
     }
+
     .pages-list {
       padding-left: 0;
       margin-bottom: 0;
@@ -113,6 +122,7 @@
       flex-direction: column;
       gap: 12px;
     }
+
     .pages-title {
       color: #778;
       font-size: 0.93em;
@@ -120,18 +130,21 @@
       margin-bottom: 6px;
       letter-spacing: .03em;
     }
+
     .page-row {
       display: flex;
       gap: 12px;
       align-items: center;
       padding: 9px 0 0 0;
     }
+
     .actions {
       margin-top: 13px;
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
     }
+
     button {
       cursor: pointer;
       padding: 9px 19px;
@@ -145,24 +158,30 @@
       box-shadow: 0 1px 2px 0 rgb(60 72 88 / 0.06);
       outline: 0;
     }
+
     button:active {
       background: var(--primary-hover);
     }
+
     .btn-danger {
       background: var(--accent);
     }
+
     .btn-danger:active {
       background: #bb204d;
     }
+
     .btn-light {
       background: #f1f3fa;
       color: #3f51b5;
       box-shadow: none;
       border: 1px solid var(--primary);
     }
+
     .btn-success {
       background: var(--success);
     }
+
     .add-btn {
       font-size: .95em;
       padding: 8px 15px;
@@ -170,10 +189,12 @@
       color: var(--primary);
       border: 1px solid var(--primary);
     }
+
     .add-btn:active {
       background: #e2e8fa;
       color: var(--primary-hover);
     }
+
     .result {
       margin-top: 32px;
       padding: 28px 18px;
@@ -185,36 +206,45 @@
       word-break: break-all;
       box-shadow: 0 1px 2px rgb(60 72 88 / 0.08);
     }
+
     .result pre {
       margin: 0;
       font-family: 'Fira Mono', monospace;
       background: transparent;
       font-size: 1.03em;
     }
+
     .error {
       color: var(--error);
       font-weight: 600;
     }
+
     .success {
       color: var(--success);
       font-weight: 600;
     }
+
     @media (max-width: 600px) {
       .container {
         max-width: 99vw;
         padding: 2vw 2vw 4vw 2vw;
       }
+
       .object-item {
         padding: 12px;
       }
-      input[type="text"] {
+
+      input[type="text"], select {
         width: 100%;
       }
+
       .input-row {
         flex-direction: column;
         gap: 8px;
       }
-      button, .add-btn {
+
+      button,
+      .add-btn {
         padding: 9px 5vw;
         min-width: 40vw;
         font-size: 1em;
@@ -222,260 +252,245 @@
     }
   </style>
 </head>
+
 <body>
 
-<div class="container">
-  <h2>对象数组可视化编辑</h2>
-  <div id="app"></div>
-  <div class="actions">
-    <button id="send-btn" class="btn-success">构建并请求</button>
-    <button id="add-obj-btn" class="add-btn">添加对象</button>
+  <div class="container">
+    <h2>对象可视化编辑</h2>
+    <div id="app"></div>
+    <div class="actions">
+      <button id="send-btn" class="btn-success">构建并请求</button>
+    </div>
+    <div class="result" id="result"></div>
   </div>
-  <div class="result" id="result"></div>
-</div>
 
-<script>
-(function(){
-  // State: array of objects
-  let objects = [
-    {
-      data: "",
-      domain: "",
-      pages: [
-        { page: "", name: "" }
-      ]
-    }
-  ];
+  <script>
+    (function () {
+      // State: a single object (no outer array anymore!)
+      let obj = {
+        data: "games", // 默认选项
+        domain: "hoxilk.net", // 默认为 hoxilk.net
+        pages: [
+          { page: "index", name: "" } // page默认home
+        ]
+      };
 
-  function createInput(value, onChange, placeholder="") {
-    const input = document.createElement("input");
-    input.type = "text";
-    input.value = value;
-    input.placeholder = placeholder;
-    input.oninput = (e) => onChange(e.target.value);
-    return input;
-  }
+      // 创建下拉框 select element
+      function createSelect(value, onChange, optionsArr) {
+        const select = document.createElement("select");
+        optionsArr.forEach(opt => {
+          const option = document.createElement("option");
+          option.value = opt;
+          option.textContent = opt;
+          select.appendChild(option);
+        });
+        select.value = value;
+        select.onchange = (e) => onChange(e.target.value);
+        return select;
+      }
 
-  function render() {
-    const app = document.getElementById('app');
-    app.innerHTML = "";
-    const objectsList = document.createElement("div");
-    objectsList.className = "objects-list";
-    objects.forEach((obj, idx) => {
-      const objectDiv = document.createElement("div");
-      objectDiv.className = "object-item";
+      function createInput(value, onChange, placeholder = "") {
+        const input = document.createElement("input");
+        input.type = "text";
+        input.value = value;
+        input.placeholder = placeholder;
+        input.oninput = (e) => onChange(e.target.value);
+        return input;
+      }
 
-      // header row
-      const header = document.createElement("div");
-      header.className = "object-header";
-      const objTitle = document.createElement("span");
-      objTitle.textContent = `对象 ${idx + 1}`;
-      objTitle.style.fontWeight = "600";
-      objTitle.style.fontSize = "1.10em";
-      header.appendChild(objTitle);
+      function render() {
+        const app = document.getElementById('app');
+        app.innerHTML = "";
+        const objectDiv = document.createElement("div");
+        objectDiv.className = "object-item";
 
-      const objectActions = document.createElement("div");
-      objectActions.className = "object-actions";
-      // 删除对象按钮
-      if (objects.length > 1) {
-        const delBtn = document.createElement("button");
-        delBtn.textContent = "删除对象";
-        delBtn.type = "button";
-        delBtn.className = "btn-danger";
-        delBtn.onclick = ()=>{
-          objects.splice(idx, 1);
+        // header row
+        const header = document.createElement("div");
+        header.className = "object-header";
+        const objTitle = document.createElement("span");
+        objTitle.textContent = `对象`;
+        objTitle.style.fontWeight = "600";
+        objTitle.style.fontSize = "1.10em";
+        header.appendChild(objTitle);
+
+        // 没有删除对象按钮也没有 actions,只显示一个对象
+        header.appendChild(document.createElement("div")); // 占位
+        objectDiv.appendChild(header);
+
+        // Data & Domain
+        const dataRow = document.createElement("div");
+        dataRow.className = "input-row";
+        // data
+        const dataGrp = document.createElement("div");
+        dataGrp.className = "input-group";
+        const dataLbl = document.createElement("label");
+        dataLbl.textContent = "data";
+        dataGrp.appendChild(dataLbl);
+        // 用select下拉框替换
+        dataGrp.appendChild(createSelect(obj.data, (val) => { obj.data = val; }, ["games", "news"]));
+        dataRow.appendChild(dataGrp);
+
+        // domain
+        const domainGrp = document.createElement("div");
+        domainGrp.className = "input-group";
+        const domainLbl = document.createElement("label");
+        domainLbl.textContent = "domain";
+        domainGrp.appendChild(domainLbl);
+        domainGrp.appendChild(createInput(obj.domain, (val) => { obj.domain = val; }, "domain 值"));
+        dataRow.appendChild(domainGrp);
+        objectDiv.appendChild(dataRow);
+
+        // Pages array
+        const pagesDiv = document.createElement("div");
+        pagesDiv.className = "pages-list";
+
+        // title & add-page button
+        const pagesTitleRow = document.createElement("div");
+        pagesTitleRow.className = "input-row";
+        const pagesLbl = document.createElement("div");
+        pagesLbl.className = "pages-title";
+        pagesLbl.textContent = "pages";
+        pagesTitleRow.appendChild(pagesLbl);
+
+        const addPageBtn = document.createElement("button");
+        addPageBtn.textContent = "添加 page";
+        addPageBtn.type = "button";
+        addPageBtn.className = "add-btn";
+        addPageBtn.style.marginLeft = "auto";
+        addPageBtn.onclick = () => {
+          obj.pages.push({ page: "index", name: "" }); // 新增page默认home
           render();
         };
-        objectActions.appendChild(delBtn);
+        pagesTitleRow.appendChild(addPageBtn);
+        pagesDiv.appendChild(pagesTitleRow);
+
+        obj.pages.forEach((pageObj, pidx) => {
+          const pageRow = document.createElement("div");
+          pageRow.className = "page-row";
+          // page (select)
+          const pageSelect = createSelect(pageObj.page, (v) => { pageObj.page = v; }, ["index", "detail", "category"]);
+
+          // name (input)
+          const nameInput = createInput(pageObj.name, (v) => { pageObj.name = v; }, "name");
+          // labels
+          const pageGrp = document.createElement("div");
+          pageGrp.className = "input-group";
+          const pageLbl = document.createElement("label");
+          pageLbl.style.marginBottom = "0";
+          pageLbl.textContent = "page";
+          pageGrp.appendChild(pageLbl);
+          pageGrp.appendChild(pageSelect);
+
+          const nameGrp = document.createElement("div");
+          nameGrp.className = "input-group";
+          const nameLbl = document.createElement("label");
+          nameLbl.style.marginBottom = "0";
+          nameLbl.textContent = "name";
+          nameGrp.appendChild(nameLbl);
+          nameGrp.appendChild(nameInput);
+
+          pageRow.appendChild(pageGrp);
+          pageRow.appendChild(nameGrp);
+
+          // 删除page按钮
+          if (obj.pages.length > 1) {
+            const delPageBtn = document.createElement("button");
+            delPageBtn.textContent = "删除";
+            delPageBtn.type = "button";
+            delPageBtn.className = "btn-danger";
+            delPageBtn.onclick = () => {
+              obj.pages.splice(pidx, 1);
+              render();
+            };
+            pageRow.appendChild(delPageBtn);
+          }
+          pagesDiv.appendChild(pageRow);
+        });
+
+        objectDiv.appendChild(pagesDiv);
+        app.appendChild(objectDiv);
       }
-      header.appendChild(objectActions);
-      objectDiv.appendChild(header);
 
-      // Data & Domain
-      const dataRow = document.createElement("div");
-      dataRow.className = "input-row";
-      // data
-      const dataGrp = document.createElement("div");
-      dataGrp.className = "input-group";
-      const dataLbl = document.createElement("label");
-      dataLbl.textContent = "data";
-      dataGrp.appendChild(dataLbl);
-      dataGrp.appendChild(createInput(obj.data, (val)=>{obj.data=val;}, "data 值"));
-      dataRow.appendChild(dataGrp);
-
-      // domain
-      const domainGrp = document.createElement("div");
-      domainGrp.className = "input-group";
-      const domainLbl = document.createElement("label");
-      domainLbl.textContent = "domain";
-      domainGrp.appendChild(domainLbl);
-      domainGrp.appendChild(createInput(obj.domain, (val)=>{obj.domain=val;}, "domain 值"));
-      dataRow.appendChild(domainGrp);
-      objectDiv.appendChild(dataRow);
-
-      // Pages array
-      const pagesDiv = document.createElement("div");
-      pagesDiv.className = "pages-list";
-
-      // title & add-page button
-      const pagesTitleRow = document.createElement("div");
-      pagesTitleRow.className = "input-row";
-      const pagesLbl = document.createElement("div");
-      pagesLbl.className = "pages-title";
-      pagesLbl.textContent = "pages";
-      pagesTitleRow.appendChild(pagesLbl);
-
-      const addPageBtn = document.createElement("button");
-      addPageBtn.textContent = "添加 page";
-      addPageBtn.type = "button";
-      addPageBtn.className = "add-btn";
-      addPageBtn.style.marginLeft = "auto";
-      addPageBtn.onclick = ()=>{
-        obj.pages.push({page:"", name:""});
-        render();
-      };
-      pagesTitleRow.appendChild(addPageBtn);
-      pagesDiv.appendChild(pagesTitleRow);
-
-      obj.pages.forEach((pageObj, pidx) => {
-        const pageRow = document.createElement("div");
-        pageRow.className = "page-row";
-        // page
-        const pageInput = createInput(pageObj.page, (v)=>{pageObj.page=v;}, "page");
-        // name
-        const nameInput = createInput(pageObj.name, (v)=>{pageObj.name=v;}, "name");
-        // labels
-        const pageGrp = document.createElement("div");
-        pageGrp.className = "input-group";
-        const pageLbl = document.createElement("label");
-        pageLbl.style.marginBottom = "0";
-        pageLbl.textContent = "page";
-        pageGrp.appendChild(pageLbl);
-        pageGrp.appendChild(pageInput);
-
-        const nameGrp = document.createElement("div");
-        nameGrp.className = "input-group";
-        const nameLbl = document.createElement("label");
-        nameLbl.style.marginBottom = "0";
-        nameLbl.textContent = "name";
-        nameGrp.appendChild(nameLbl);
-        nameGrp.appendChild(nameInput);
-
-        pageRow.appendChild(pageGrp);
-        pageRow.appendChild(nameGrp);
-
-        // 删除page按钮
-        if (obj.pages.length > 1) {
-          const delPageBtn = document.createElement("button");
-          delPageBtn.textContent = "删除";
-          delPageBtn.type = "button";
-          delPageBtn.className = "btn-danger";
-          delPageBtn.onclick = ()=>{
-            obj.pages.splice(pidx,1);
-            render();
-          };
-          pageRow.appendChild(delPageBtn);
+      function validateObject(o) {
+        if (!o.data ) return "data不能为空";
+        if (!Array.isArray(o.pages) || o.pages.length === 0) return "pages 不能为空";
+        for (const page of o.pages) {
+          if (!page.page || !page.name) return "每个 page 和 name 不能为空";
         }
-        pagesDiv.appendChild(pageRow);
-      });
-
-      objectDiv.appendChild(pagesDiv);
-      objectsList.appendChild(objectDiv);
-    });
-
-    app.appendChild(objectsList);
-  }
-
-  function validateObjects(objs) {
-    // Simple validation, you can expand
-    for (const obj of objs) {
-      if (!obj.data || !obj.domain) return "data 和 domain 不能为空";
-      if (!Array.isArray(obj.pages) || obj.pages.length === 0) return "pages 不能为空";
-      for (const page of obj.pages) {
-        if (!page.page || !page.name) return "每个 page 和 name 不能为空";
+        return null;
       }
-    }
-    return null;
-  }
 
-  render();
+      render();
 
-  document.getElementById("add-obj-btn").onclick = function() {
-    objects.push({
-      data: "",
-      domain: "",
-      pages: [{page:"", name:""}]
-    });
-    render();
-  };
+      // 移除了添加对象按钮，因此不用给add-obj-btn绑定事件
 
-  document.getElementById("send-btn").onclick = function() {
-    const resultDiv = document.getElementById("result");
-    resultDiv.innerHTML = "";
-    let dataToSend = JSON.parse(JSON.stringify(objects)); // deep copy
+      document.getElementById("send-btn").onclick = function () {
+        const resultDiv = document.getElementById("result");
+        resultDiv.innerHTML = "";
+        let dataToSend = JSON.parse(JSON.stringify(obj)); // deep copy
 
-    const error = validateObjects(dataToSend);
-    if (error) {
-      resultDiv.innerHTML = '<span class="error">输入错误: ' + error + '</span>';
-      return;
-    }
+        const error = validateObject(dataToSend);
+        if (error) {
+          resultDiv.innerHTML = '<span class="error">输入错误: ' + error + '</span>';
+          return;
+        }
 
-    resultDiv.innerHTML = "请求中...";
+        resultDiv.innerHTML = "请求中...";
 
-    // GET方式：参数拼为url字符串
-    function encodeQuery(obj, prefix) {
-      let str = [];
-      for (let p in obj) {
-        if (Object.prototype.hasOwnProperty.call(obj, p)) {
-          let k = prefix ? prefix + "[" + p + "]" : p, v = obj[p];
-          if (typeof v === "object" && v !== null && !Array.isArray(v)) {
-            str.push(encodeQuery(v, k));
-          } else if (Array.isArray(v)) {
-            v.forEach(function (item, i) {
-              if (typeof item === "object" && item !== null) {
-                str.push(encodeQuery(item, k + "[" + i + "]"));
-              } else {
-                str.push(encodeURIComponent(k + "[" + i + "]") + "=" + encodeURIComponent(item));
+        // GET方式：参数拼为url字符串
+        function encodeQuery(obj, prefix) {
+          let str = [];
+          for (let p in obj) {
+            if (Object.prototype.hasOwnProperty.call(obj, p)) {
+              let k = prefix ? prefix + "[" + p + "]" : p, v = obj[p];
+              if (typeof v === "object" && v !== null && !Array.isArray(v)) {
+                str.push(encodeQuery(v, k));
+              } else if (Array.isArray(v)) {
+                v.forEach(function (item, i) {
+                  if (typeof item === "object" && item !== null) {
+                    str.push(encodeQuery(item, k + "[" + i + "]"));
+                  } else {
+                    str.push(encodeURIComponent(k + "[" + i + "]") + "=" + encodeURIComponent(item));
+                  }
+                });
+              } else if (v !== undefined) {
+                str.push(encodeURIComponent(k) + "=" + encodeURIComponent(v));
+              }
+            }
+          }
+          return str.join("&");
+        }
+
+        const queryString = encodeQuery(dataToSend);
+
+        const url = `http://localhost:3000/render?q=${JSON.stringify(dataToSend)}`
+
+        fetch(url, {
+          method: "GET"
+        })
+          .then(res => {
+            // 试图按JSON解析，否则按文本
+            return res.text().then(text => {
+              try {
+                return { json: JSON.parse(text), raw: text, ok: true };
+              } catch (e) {
+                return { json: null, raw: text, ok: false };
               }
             });
-          } else if (v !== undefined) {
-            str.push(encodeURIComponent(k) + "=" + encodeURIComponent(v));
-          }
-        }
-      }
-      return str.join("&");
-    }
-
-    const queryString = encodeQuery(dataToSend, "data");
-
-    const url = "http://localhost:3000/render" + (queryString ? ("?" + queryString) : "");
-
-    fetch(url, {
-      method: "GET"
-    })
-    .then(res => {
-      // 试图按JSON解析，否则按文本
-      return res.text().then(text => {
-        try {
-          return {json: JSON.parse(text), raw: text, ok: true};
-        } catch (e) {
-          return {json: null, raw: text, ok: false};
-        }
-      });
-    })
-    .then(result => {
-      if (result.ok && result.json !== null) {
-        document.getElementById("result").innerHTML = "<span class='success'>请求成功</span><br><pre>" + JSON.stringify(result.json, null, 2) + "</pre>";
-      } else {
-        document.getElementById("result").innerHTML = "<span class='success'>请求成功（非JSON返回）</span><br><pre>" + (result.raw) + "</pre>";
-      }
-    })
-    .catch(err => {
-      resultDiv.innerHTML = '<span class="error">请求失败: ' + err + '</span>';
-    });
-  };
-})();
-</script>
+          })
+          .then(result => {
+            if (result.ok && result.json !== null) {
+              document.getElementById("result").innerHTML = "<span class='success'>请求成功</span><br><pre>" + JSON.stringify(result.json, null, 2) + "</pre>";
+            } else {
+              document.getElementById("result").innerHTML = "<span class='success'>请求成功（非JSON返回）</span><br><pre>" + (result.raw) + "</pre>";
+            }
+          })
+          .catch(err => {
+            resultDiv.innerHTML = '<span class="error">请求失败: ' + err + '</span>';
+          });
+      };
+    })();
+  </script>
 </body>
-</html>
 
+</html>

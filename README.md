@@ -7,7 +7,7 @@
 ```
 .
 ├── templates/          # 模板文件目录
-│   ├── home/          # 首页模板
+│   ├── index/          # 首页模板
 │   │   └── default.njk
 │   ├── detail/        # 详情页模板
 │   │   └── default.njk
@@ -34,7 +34,7 @@
 
 项目按以下页面类型组织模板：
 
-1. **首页 (home)** - 网站首页模板
+1. **首页 (index)** - 网站首页模板
 2. **详情页 (detail)** - 内容详情页面模板
 3. **分类页 (category)** - 分类列表页面模板
 4. **协议类页面 (agreement)** - 协议、条款等页面模板
@@ -77,7 +77,7 @@ npm run build
 
 ```
 dist/
-├── home/                   # 首页目录
+├── index/                   # 首页目录
 │   └── default.njk        # 完整的首页模板
 ├── detail/                 # 详情页目录
 │   └── default.njk        # 完整的详情页模板
@@ -127,7 +127,7 @@ dist/
 
 ### 1. 添加首页模板
 
-在 `templates/home/` 目录下创建新模板文件，如 `templates/home/v2.njk`：
+在 `templates/index/` 目录下创建新模板文件，如 `templates/index/v2.njk`：
 
 ```njk
 {% extends "layouts/base.njk" %}
@@ -227,7 +227,7 @@ dist/
 
 ### templates/
 
-- `home/` - 首页模板目录
+- `index/` - 首页模板目录
 - `detail/` - 详情页模板目录
 - `category/` - 分类页模板目录
 - `agreement/` - 协议类页面模板目录

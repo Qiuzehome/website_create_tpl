@@ -21,16 +21,16 @@ npm run dev
 - 自定义模板: `http://localhost:3002/?template=模板名称`
 
 ### 模板页面
-- 自定义模板： http://localhost:3002/tpl/home/games
+- 自定义模板： http://localhost:3002/tpl/index/games
 
 ### 获取数据拼接
-- http://localhost:3002/tpl/home/games?type={games|news}
+- http://localhost:3002/tpl/index/games?type={games|news}
 
 ## 4. 添加新模板
 
 ### 添加首页模板
 
-1. 在 `templates/home/` 目录下创建新模板文件，如 `v2.njk`
+1. 在 `templates/index/` 目录下创建新模板文件，如 `v2.njk`
 2. 访问 `http://localhost:3002/?template=v2`
 
 ### 添加详情页模板
@@ -113,7 +113,7 @@ npm run dev
 
 ```
 templates/
-├── home/          # 首页模板
+├── index/          # 首页模板
 ├── detail/        # 详情页模板
 ├── category/      # 分类页模板
 ├── agreement/     # 协议类页面模板
@@ -128,7 +128,7 @@ public/
 
 ## 8. 页面类型说明
 
-### 首页 (home)
+### 首页 (index)
 用于网站首页，通常包含：
 - 轮播图
 - 特色内容
@@ -170,7 +170,7 @@ public/
 ### 模板未找到
 
 确保：
-1. 模板文件在正确的目录下（`templates/home/`、`templates/detail/` 等）
+1. 模板文件在正确的目录下（`templates/index/`、`templates/detail/` 等）
 2. 文件扩展名为 `.njk`
 3. 模板路径正确
 
