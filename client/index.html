@@ -100,7 +100,8 @@
       gap: 18px;
     }
 
-    input[type="text"], select {
+    input[type="text"],
+    select {
       padding: 10px 13px;
       border: 1px solid var(--border);
       border-radius: 7px;
@@ -111,7 +112,8 @@
       width: 170px;
     }
 
-    input[type="text"]:focus, select:focus {
+    input[type="text"]:focus,
+    select:focus {
       border-color: var(--primary);
     }
 
@@ -234,7 +236,8 @@
         padding: 12px;
       }
 
-      input[type="text"], select {
+      input[type="text"],
+      select {
         width: 100%;
       }
 
@@ -368,7 +371,7 @@
           const pageRow = document.createElement("div");
           pageRow.className = "page-row";
           // page (select)
-          const pageSelect = createSelect(pageObj.page, (v) => { pageObj.page = v; }, ["index", "detail", "category"]);
+          const pageSelect = createSelect(pageObj.page, (v) => { pageObj.page = v; }, ["index", "detail", "about", "privacy", "terms", "category"]);
 
           // name (input)
           const nameInput = createInput(pageObj.name, (v) => { pageObj.name = v; }, "name");
@@ -412,7 +415,7 @@
       }
 
       function validateObject(o) {
-        if (!o.data ) return "data不能为空";
+        if (!o.data) return "data不能为空";
         if (!Array.isArray(o.pages) || o.pages.length === 0) return "pages 不能为空";
         for (const page of o.pages) {
           if (!page.page || !page.name) return "每个 page 和 name 不能为空";

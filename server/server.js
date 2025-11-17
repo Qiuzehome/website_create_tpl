@@ -59,15 +59,15 @@ app.get('/tpl', async (req, res) => {
     return res.status(500).send('数据获取失败');
   }
 
-  const templateName = `${name}/index`;
+  // const templateName = `${name}/index`;
   try {
-    res.render(`${page}/${templateName}.njk`, Object.assign({
+    res.render(`${page}/${name}.njk`, Object.assign({
       title: '首页',
       pageType: { page },
-      templateName: templateName
+      templateName: name
     }, configData));
   } catch (error) {
-    res.status(404).send(`${page}/${templateName}.njk`);
+    res.status(404).send(`${page}/${name}.njk`);
   }
 });
 
