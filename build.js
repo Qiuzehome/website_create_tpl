@@ -229,31 +229,10 @@ function getAllTemplates() {
   }
   traverseDir(templatesPath, '');
 
-  // 附加css字段：public/下寻找同名.css，规则如下：
-  // 1. 优先查找 static/[type]/[name].css
-  // 2. 退而查找 static/[type].css
-  // 3. 退而查找 static/[name].css
-  // 4. 最后不填
   return templates.map(item => {
-    let cssPath = '';
-    const typePath = item.type.replace(/^\//, '');
-    const staticDir = 'static';
-    const pathsToTry = [
-      typePath && item.name ? path.join(staticDir, typePath, `${item.name}.css`) : '',
-      typePath ? path.join(staticDir, `${typePath}.css`) : '',
-      item.name ? path.join(staticDir, `${item.name}.css`) : ''
-    ];
-    for (const p of pathsToTry) {
-      if (p && fs.existsSync(path.join(distPath, p))) {
-        cssPath = p.replace(/\\/g, '/');
-        break;
-      }
-    }
-
     return {
       ...item,
-      type: item.type.replace(/^\//, ''),
-      css: cssPath
+      type: item.type.replace(/^\//, '')
     };
   });
 }
